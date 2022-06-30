@@ -16,6 +16,8 @@
   <!-- Fonts -->
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/picker.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -43,10 +45,10 @@
               <a class="nav-link" href="{{ route('category.index') }}">{{ __('Category') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">{{ __('Book') }}</a>
+              <a class="nav-link" href="{{ route('book.index') }}">{{ __('Book') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">{{ __('Subscriber') }}</a>
+              <a class="nav-link" href="{{ route('subscriber.index') }}">{{ __('Subscriber') }}</a>
             </li>
             @endif
           </ul>
@@ -93,6 +95,7 @@
       @yield('content')
     </main>
   </div>
+  @yield('script')
 </body>
 
 </html>

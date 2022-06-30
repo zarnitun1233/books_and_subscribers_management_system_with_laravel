@@ -27,4 +27,40 @@ class Book extends Model
         'status',
         'book'
     ];
+
+    /**
+     * Set the categories
+     *
+     */
+    public function setAuthorAttribute($value)
+    {
+        $this->attributes['author_id'] = json_encode($value);
+    }
+  
+    /**
+     * Get the categories
+     *
+     */
+    public function getAuthorAttribute($value)
+    {
+        return $this->attributes['author_id'] = json_decode($value);
+    }
+
+    /**
+     * Set the categories
+     *
+     */
+    public function setCategoryAttribute($value)
+    {
+        $this->attributes['category_id'] = json_encode($value);
+    }
+  
+    /**
+     * Get the categories
+     *
+     */
+    public function getCategoryAttribute($value)
+    {
+        return $this->attributes['category_id'] = json_decode($value);
+    }
 }

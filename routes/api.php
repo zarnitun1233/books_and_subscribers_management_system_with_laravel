@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * SubscriberApiController with api routes
+ */
+Route::group([], function () {
+    Route::get('/subscribe', [App\Http\Controllers\Subscriber\SubscriberApiController::class, 'index']);
+    Route::post('/subscribe', [App\Http\Controllers\Subscriber\SubscriberApiController::class, 'store']);
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

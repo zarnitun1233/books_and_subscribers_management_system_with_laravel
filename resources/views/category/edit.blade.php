@@ -6,7 +6,7 @@
   <div class="card">
     <div class="card-header">Edit Category</div>
     <div class="card-body">
-      <form action="" method="POST">
+      <form action="{{ route('category.update', $category->id) }}" method="POST">
         @csrf
         <div class="form-group row mb-3">
           <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>

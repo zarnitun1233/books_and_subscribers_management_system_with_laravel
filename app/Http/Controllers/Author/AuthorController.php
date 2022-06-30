@@ -18,7 +18,7 @@ class AuthorController extends Controller
         $authors = DB::table('authors')
             ->join('photos', 'authors.photo_id', '=', 'photos.id')
             ->select('authors.*', 'photos.photo')
-            ->where('authors.deleted_at', '!=', 'NULL')
+            ->where('authors.deleted_at', '=', null)
             ->get();
         return view('author.index')->with('authors', $authors);
     }

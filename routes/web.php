@@ -23,3 +23,14 @@ Route::get('category.create', [App\Http\Controllers\Category\CategoryController:
 Route::post('category.store', [App\Http\Controllers\Category\CategoryController::class, 'store'])->name('category.store');
 Route::get('category.edit/{id}', [App\Http\Controllers\Category\CategoryController::class, 'edit'])->name('category.edit');
 Route::post('category.update/{id}', [App\Http\Controllers\Category\CategoryController::class, 'update'])->name('category.update');
+Route::delete('category.delete/{id}', [App\Http\Controllers\Category\CategoryController::class, 'delete'])->name('category.delete');
+
+//To show Subscriber List
+Route::get('subscriber.index', function() {
+    return view('subscriber.index');
+})->name('subscriber.index');
+
+//BookController
+Route::get('book.index', [App\Http\Controllers\Book\BookController::class, 'index'])->name('book.index');
+Route::get('book.create', [App\Http\Controllers\Book\BookController::class, 'create'])->name('book.create');
+Route::post('book.store', [App\Http\Controllers\Book\BookController::class, 'store'])->name('book.store');
