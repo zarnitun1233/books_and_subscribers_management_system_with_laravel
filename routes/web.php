@@ -16,3 +16,10 @@ Route::post('author-store', [App\Http\Controllers\Author\AuthorController::class
 Route::get('author-edit/{id}', [App\Http\Controllers\Author\AuthorController::class, 'edit'])->name('author.edit');
 Route::post('author-update/{id}', [App\Http\Controllers\Author\AuthorController::class, 'update'])->name('author.update');
 Route::delete('author-delete/{id}', [App\Http\Controllers\Author\AuthorController::class, 'delete'])->name('author.delete');
+
+//CategoryController
+Route::get('category.index', [App\Http\Controllers\Category\CategoryController::class, 'index'])->name('category.index');
+Route::get('category.create', [App\Http\Controllers\Category\CategoryController::class, 'create'])->name('category.create');
+Route::post('category.store', [App\Http\Controllers\Category\CategoryController::class, 'store'])->name('category.store');
+Route::get('category.edit/{id}', [App\Http\Controllers\Category\CategoryController::class, 'edit'])->name('category.edit');
+Route::post('category.update/{id}', [App\Http\Controllers\Category\CategoryController::class, 'update'])->name('category.update');
