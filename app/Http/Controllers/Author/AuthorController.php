@@ -18,6 +18,7 @@ class AuthorController extends Controller
         $authors = DB::table('authors')
             ->join('photos', 'authors.photo_id', '=', 'photos.id')
             ->select('authors.*', 'photos.photo')
+            ->where('authors.deleted_at', '!=', 'NULL')
             ->get();
         return view('author.index')->with('authors', $authors);
     }
@@ -129,8 +130,13 @@ class AuthorController extends Controller
      */
     public function delete($id)
     {
-        if (DB::table('authors')->where('id', '=', $id)->delete()) {
-            return redirect()->route('author.index')->with('success', 'Author deleted Successfully');
-        }
+        DB::table('authors')
+            ->where('id', $id)
+            ->update(
+                [
+                    'deleted_at' => now()
+                ]
+            );
+        return redirect()->route('author.index')->with('success', 'Author deleted Successfully');
     }
 }
