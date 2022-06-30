@@ -21,6 +21,7 @@ class CreateBooksTable extends Migration
             $table->integer('author_id');
             $table->integer('category_id');
             $table->date('published_date');
+            $table->integer('status');
             $table->string('book');
             $table->timestamps();
             $table->softDeletes();

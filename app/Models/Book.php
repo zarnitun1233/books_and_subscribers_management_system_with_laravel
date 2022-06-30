@@ -21,6 +21,7 @@ class Book extends Model
         'author_id',
         'category_id',
         'published_date',
+        'status',
         'book'
     ];
 }
