@@ -33,7 +33,7 @@ class AuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->route("login")->with('success', 'Login Succeed');
+            return redirect()->route("dashboard")->with('success', 'Login Succeed');
         }
         return redirect()->route("login")->with('fail', 'Login Failed');
     }
@@ -46,5 +46,13 @@ class AuthController extends Controller
     {
         Auth::logout();
         return redirect()->route("login")->with('logout', 'Logout Succeed');
+    }
+
+    /**
+     * Show Admin Dashboard
+     */
+    public function dashboard()
+    {
+        return view("dashboard");
     }
 }

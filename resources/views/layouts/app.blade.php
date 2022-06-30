@@ -24,7 +24,7 @@
 <body>
   <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-      <div class="container">
+      <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/') }}">
           Books and Subscribers Management System
         </a>
@@ -37,7 +37,7 @@
           <ul class="navbar-nav me-auto">
             @if (auth()->user())
             <li class="nav-item">
-              <a class="nav-link" href="">{{ __('Author') }}</a>
+              <a class="nav-link" href="{{ route('author.index') }}">{{ __('Author') }}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="">{{ __('Category') }}</a>
