@@ -26,7 +26,7 @@ Route::post('category.update/{id}', [App\Http\Controllers\Category\CategoryContr
 Route::delete('category.delete/{id}', [App\Http\Controllers\Category\CategoryController::class, 'delete'])->name('category.delete');
 
 //To show Subscriber List
-Route::get('subscriber.index', function() {
+Route::get('subscriber.index', function () {
     return view('subscriber.index');
 })->name('subscriber.index');
 
@@ -34,3 +34,7 @@ Route::get('subscriber.index', function() {
 Route::get('book.index', [App\Http\Controllers\Book\BookController::class, 'index'])->name('book.index');
 Route::get('book.create', [App\Http\Controllers\Book\BookController::class, 'create'])->name('book.create');
 Route::post('book.store', [App\Http\Controllers\Book\BookController::class, 'store'])->name('book.store');
+Route::delete('book.delete/{id}', [App\Http\Controllers\Book\BookController::class, 'delete'])->name('book.delete');
+Route::get('book.download/{id}', [App\Http\Controllers\Book\BookController::class, 'download'])->name('book.download');
+Route::get('book.edit/{id}', [App\Http\Controllers\Book\BookController::class, 'edit'])->name('book.edit');
+Route::post('book.update/{id}', [App\Http\Controllers\Book\BookController::class, 'update'])->name('book.update');

@@ -21,8 +21,8 @@ class Book extends Model
         'title',
         'photo_id',
         'description',
-        'author_id',
-        'category_id',
+        'author',
+        'category',
         'published_date',
         'status',
         'book'
@@ -34,16 +34,16 @@ class Book extends Model
      */
     public function setAuthorAttribute($value)
     {
-        $this->attributes['author_id'] = json_encode($value);
+        $this->attributes['author'] = json_encode($value);
     }
-  
+
     /**
      * Get the categories
      *
      */
     public function getAuthorAttribute($value)
     {
-        return $this->attributes['author_id'] = json_decode($value);
+        return $this->attributes['author'] = json_decode($value);
     }
 
     /**
@@ -52,15 +52,15 @@ class Book extends Model
      */
     public function setCategoryAttribute($value)
     {
-        $this->attributes['category_id'] = json_encode($value);
+        $this->attributes['category'] = json_encode($value);
     }
-  
+
     /**
      * Get the categories
      *
      */
     public function getCategoryAttribute($value)
     {
-        return $this->attributes['category_id'] = json_decode($value);
+        return $this->attributes['category'] = json_decode($value);
     }
 }
