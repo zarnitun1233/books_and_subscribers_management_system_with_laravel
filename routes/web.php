@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
+use App\Mail\MyTestMail;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendEmailTest;
+use App\Jobs\SendEmail;
 
 // login, logout, dashboard
 Route::get('login', [App\Http\Controllers\auth\AuthController::class, 'index'])->name('login');
@@ -38,3 +43,6 @@ Route::delete('book.delete/{id}', [App\Http\Controllers\Book\BookController::cla
 Route::get('book.download/{id}', [App\Http\Controllers\Book\BookController::class, 'download'])->name('book.download');
 Route::get('book.edit/{id}', [App\Http\Controllers\Book\BookController::class, 'edit'])->name('book.edit');
 Route::post('book.update/{id}', [App\Http\Controllers\Book\BookController::class, 'update'])->name('book.update');
+
+//EmailController
+Route::get('email-test', [App\Http\Controllers\Email\EmailController::class, 'email'])->name('email');
