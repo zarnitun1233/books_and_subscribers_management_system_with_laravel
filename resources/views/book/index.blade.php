@@ -38,7 +38,7 @@
         <td class="align-middle">{{ $book->published_date }}</td>
         <td class="align-middle">
           @if ($book->status === 0)
-          <a href="" class="btn btn-info btn-sm">Publish</a>
+          <a href="{{ route('email', $book->id) }}" class="btn btn-info btn-sm">Publish</a>
           @else
           Published
           @endif
